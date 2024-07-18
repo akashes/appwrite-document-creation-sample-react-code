@@ -1,0 +1,40 @@
+import React from 'react'
+import { Client,Storage,Databases,ID } from 'appwrite'
+
+const App = () => {
+   const client = new Client();
+
+client
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('6698ffe60033e306dbf3'); // Replace with your project ID
+
+const databases = new Databases(client)
+    const promise = databases.createDocument(
+      '6699026600137db4cabf',
+      '66990279000d53beebf8',
+      ID.unique(),
+      {
+        "title": "Introduction to Appwrite",
+        "content": "Appwrite is an open-source backend-as-a-service platform that provides developers with all the core APIs required to build a modern application.",
+        "slug": "introduction-to-appwrite",
+        "views": 1234,
+        "author": "Jane Doe",
+        "is_published": true
+      }
+      
+      
+    );
+    
+    promise.then(function (response) {
+        console.log(response); // Success
+    }, function (error) {
+        console.log(error); // Failure
+    });
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default App
